@@ -9,10 +9,13 @@ const port = 8009;
 const userRoute = require("./routes/users");
 const pinRoute = require("./routes/pins");
 
+const customerRoute = require("./routes/customer");
 app.use(express.json());
 app.use(cookiParser());
 app.use(cors());
-app.use(router);
+// app.use(router);
+
+app.use("/api/customers", customerRoute);
 
 app.use("/api/users", userRoute);
 app.use("/api/pins", pinRoute);
